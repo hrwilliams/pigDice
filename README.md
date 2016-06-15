@@ -13,8 +13,8 @@ _A JS dice game called Pig Dice. the player rolls a dice, if the value is 1 they
 |Behavior    |Input   |Output   |
 |---|---|---|
 | create a random number between 1 and 6 | click  |  random  |
-| add the rolls together during 1 turn| turn 1: 2, 3 |  2+3 = turn total |
 | add 0 to total score if 1 is rolled and start next turn |  1 | +0   |
+| add the rolls together during 1 turn| turn 1: 2, 3 |  2+3 = turn total |
 | add turn total to total if player chooses hold ending turn|   |    |
 | end game when total score >= 100 | total score >= 1000 | end of game     |
 | create player 2 and give same game play as player 1 |   |    |
