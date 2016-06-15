@@ -1,6 +1,28 @@
 //  Front End logic
+var turnScore;
 $(document).ready(function()  {
-  $("#displayDice").text(getRandomIntInclusive(1,6));
+  var player1 = new PlayerScore("player",0);
+  var roll;
+  var turnScore = 0;
+  $("#rollDice").click(function() {
+    roll = getRandomIntInclusive(1,6);
+    $("#displayDice").text(roll);
+    if (roll === 1) {
+      turnScore = 0;
+      $("#turnScore").text(turnScore);
+      alert("end of turn");
+    }
+    else {
+      turnScore += roll;
+      $("#turnScore").text(turnScore);
+    }
+  });
+  $("#hold").click(function(){
+    player1.endOfTurn(turnScore);
+    turnScore = 0;
+    $("#turnScore").text(turnScore);
+    alert(player1.totalScore);
+  })
 })
 
 // Back End logic
@@ -15,5 +37,5 @@ function PlayerScore (player, totalScore) {
 }
 
 PlayerScore.prototype.endOfTurn = function(score) {
-  return this.totalScore += score;
+  return this.totalScore = this.totalScore + score;
 }
