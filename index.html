@@ -10,17 +10,34 @@
     <title>Pig Dice</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container" id="player1">
+      <h1>Player 1</h1>
       <p><a id="rollDice" class="btn btn-primary" role="button">Roll Dice</a></p>
       <p><a id="hold" class="btn btn-primary" role="button">hold</a></p>
       <div id="dice">
-        <span id="displayDice"></span>
+        <p>Roll: <span id="displayDice"></span></p>
       </div>
       <div>
-        <p>turn score<span id="turnScore"></span></p>
+        <p>turn score: <span id="turnScore"></span></p>
+      </div>
+    </div>
+    <div class="container" id="player2">
+      <h1>Player 2</h1>
+      <p><a id="rollDice2" class="btn btn-primary" role="button">Roll Dice</a></p>
+      <p><a id="hold2" class="btn btn-primary" role="button">hold</a></p>
+      <div id="dice2">
+        <p>Roll: <span id="displayDice2"></span></p>
       </div>
       <div>
-        <p>total score<span id="totalScore"></span></p>
+        <p>turn score: <span id="turnScore2"></span></p>
+      </div>
+    </div>
+    <div class="container">
+      <div>
+        <p>player 1 total score: <span id="totalScore"></span></p>
+      </div>
+      <div>
+        <p>player 2 total score: <span id="totalScore2"></span></p>
       </div>
     </div>
   </body>
