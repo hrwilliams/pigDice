@@ -1,9 +1,9 @@
 //  Front End logic
-var turnScore;
-var diceArray = [];
-var player1_name;
-var player2_name;
+
 $(document).ready(function()  {
+  var turnScore;
+  var player1_name;
+  var player2_name;
   $("#player2").hide();
   $("#displayDice").hide();
   $("#displayDice2").hide();
@@ -31,19 +31,17 @@ $(document).ready(function()  {
     event.preventDefault();
     var player1 = new PlayerScore(player1_name,0);
     var player2 = new PlayerScore(player2_name,0);
-    $("#displayPlayer1Name").text(player1.player);
-    $("#displayPlayer2Name").text(player2.player);
+    $(".displayPlayer1Name").text(player1.player);
+    $(".displayPlayer2Name").text(player2.player);
     var roll;
-    var turnScore = 0;
+    turnScore = 0;
     $("#rollDice").click(function() {
       roll = getRandomIntInclusive(1,6);
       toggleDie(roll);
       if (roll === 1) {
-        $("#turnScore").text(turnScore);
+        $(".turnScore").text(turnScore);
         $("#totalScore").text(player1.totalScore);
         alert("end of turn");
-        // $("#displayDice2").text("");
-        $("#turnScore2").text("");
         $("#player1").hide();
         $("#player2").show();
         if (player2.totalScore != 0) {
@@ -53,12 +51,12 @@ $(document).ready(function()  {
       }
       else {
         turnScore += roll;
-        $("#turnScore").text(turnScore);
+        $(".turnScore").text(turnScore);
       }
     });
     $("#hold").click(function(){
       player1.endOfTurn(turnScore);
-      $("#turnScore").text(turnScore);
+      $(".turnScore").text(turnScore);
       $("#totalScore").text(player1.totalScore);
       if (player1.totalScore >= 100) {
         alert("You won!");
@@ -68,8 +66,7 @@ $(document).ready(function()  {
         $("#totalScore2").text("");
 
       }
-      // $("#displayDice2").text("");
-      $("#turnScore2").text("");
+      $("#blankDice").show();
       $("#player1").hide();
       $("#player2").show();
       if (player2.totalScore != 0) {
@@ -83,11 +80,10 @@ $(document).ready(function()  {
       roll = getRandomIntInclusive(1,6);
       toggleDie2(roll);
       if (roll === 1) {
-        $("#turnScore2").text(turnScore2);
+        $(".turnScore").text(turnScore2);
         $("#totalScore2").text(player2.totalScore);
         alert("End of turn");
-        // $("#displayDice").text("");
-        $("#turnScore").text("");
+        $(".turnScore").text("");
         $("#player1").show();
         $("#player2").hide();
         if (player1.totalScore != 0) {
@@ -97,12 +93,12 @@ $(document).ready(function()  {
       }
       else {
         turnScore2 += roll;
-        $("#turnScore2").text(turnScore2);
+        $(".turnScore").text(turnScore2);
       }
     });
     $("#hold2").click(function(){
       player2.endOfTurn(turnScore2);
-      $("#turnScore2").text(turnScore2);
+      $(".turnScore").text(turnScore2);
       $("#totalScore2").text(player2.totalScore);
       if (player2.totalScore >= 100) {
         alert("You won!");
@@ -111,8 +107,8 @@ $(document).ready(function()  {
         $("#totalScore").text("");
         $("#totalScore2").text("");
       }
-      // $("#displayDice").text("");
-      $("#turnScore").text("");
+      $(".turnScore").text("");
+      $("#2blankDice").show();
       $("#player1").show();
       $("#player2").hide();
       if (player1.totalScore != 0) {
@@ -135,138 +131,24 @@ PlayerScore.prototype.endOfTurn = function(score) {
   return this.totalScore = this.totalScore + score;
 }
 var toggleDie = function(roll)  {
-  if (roll === 1) {
+  var arrayOfDice = ["#displayDice2","#side1","#side2","#side3","#side4","#side5","#side6","#blankDice"]
+  arrayOfDice.forEach(function(array)  {
+    $(array).hide();
+  })
+  if (true) {
+    var i = roll;
     $("#displayDice").show();
-    $("#side6").hide();
-    $("#side2").hide();
-    $("#side3").hide();
-    $("#side4").hide();
-    $("#side5").hide();
-    $("#blankDice").hide();
-    $("#displayDice2").hide();
-    $("#side1").show();
-  }
-  else if (roll === 2) {
-    $("#displayDice").show();
-    $("#side1").hide();
-    $("#side6").hide();
-    $("#side3").hide();
-    $("#side4").hide();
-    $("#side5").hide();
-    $("#blankDice").hide();
-    $("#displayDice2").hide();
-    $("#side2").show();
-  }
-  else if (roll === 3) {
-    $("#displayDice").show();
-    $("#side1").hide();
-    $("#side2").hide();
-    $("#side6").hide();
-    $("#side4").hide();
-    $("#side5").hide();
-    $("#blankDice").hide();
-    $("#displayDice2").hide();
-    $("#side3").show();
-  }
-  else if (roll === 4) {
-    $("#displayDice").show();
-    $("#side1").hide();
-    $("#side2").hide();
-    $("#side3").hide();
-    $("#side6").hide();
-    $("#side5").hide();
-    $("#blankDice").hide();
-    $("#displayDice2").hide();
-    $("#side4").show();
-  }
-  else if (roll === 5) {
-    $("#displayDice").show();
-    $("#side1").hide();
-    $("#side2").hide();
-    $("#side3").hide();
-    $("#side4").hide();
-    $("#side6").hide();
-    $("#blankDice").hide();
-    $("#displayDice2").hide();
-    $("#side5").show();
-  }
-  else if (roll === 6) {
-    $("#displayDice").show();
-    $("#side1").hide();
-    $("#side2").hide();
-    $("#side3").hide();
-    $("#side4").hide();
-    $("#side5").hide();
-    $("#blankDice").hide();
-    $("#displayDice2").hide();
-    $("#side6").show();
+    $(arrayOfDice[i]).show();
   }
 }
 var toggleDie2 = function(roll)  {
-  if (roll === 1) {
+  var arrayOfDice = ["#displayDice","#2side1","#2side2","#2side3","#2side4","#2side5","#2side6","#2blankDice"]
+  arrayOfDice.forEach(function(array)  {
+    $(array).hide();
+  })
+  if (true) {
+    var i = roll;
     $("#displayDice2").show();
-    $("#2side6").hide();
-    $("#2side2").hide();
-    $("#2side3").hide();
-    $("#2side4").hide();
-    $("#2side5").hide();
-    $("#2blankDice").hide();
-    $("#displayDice").hide();
-    $("#2side1").show();
-  }
-  else if (roll === 2) {
-    $("#displayDice2").show();
-    $("#2side1").hide();
-    $("#2side6").hide();
-    $("#2side3").hide();
-    $("#2side4").hide();
-    $("#2side5").hide();
-    $("#2blankDice").hide();
-    $("#displayDice").hide();
-    $("#2side2").show();
-  }
-  else if (roll === 3) {
-    $("#displayDice2").show();
-    $("#2side1").hide();
-    $("#2side2").hide();
-    $("#2side6").hide();
-    $("#2side4").hide();
-    $("#2side5").hide();
-    $("#2blankDice").hide();
-    $("#displayDice").hide();
-    $("#2side3").show();
-  }
-  else if (roll === 4) {
-    $("#displayDice2").show();
-    $("#2side1").hide();
-    $("#2side2").hide();
-    $("#2side3").hide();
-    $("#2side6").hide();
-    $("#2side5").hide();
-    $("#2blankDice").hide();
-    $("#displayDice").hide();
-    $("#2side4").show();
-  }
-  else if (roll === 5) {
-    $("#displayDice2").show();
-    $("#2side1").hide();
-    $("#2side2").hide();
-    $("#2side3").hide();
-    $("#2side4").hide();
-    $("#2side6").hide();
-    $("#2blankDice").hide();
-    $("#displayDice").hide();
-    $("#2side5").show();
-  }
-  else if (roll === 6) {
-    $("#displayDice2").show();
-    $("#2side1").hide();
-    $("#2side2").hide();
-    $("#2side3").hide();
-    $("#2side4").hide();
-    $("#2side5").hide();
-    $("#2blankDice").hide();
-    $("#displayDice").hide();
-    $("#2side6").show();
+    $(arrayOfDice[i]).show();
   }
 }

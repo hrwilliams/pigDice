@@ -1,3 +1,45 @@
 img {
   width: 100px;
 }
+h1  {
+  font-size: 40pt;
+  text-align: center;
+  padding-top: 20px;
+}
+.footer {
+  /*position:fixed;*/
+  /*bottom:100px;*/
+  padding-top: 400px;
+  font-size: 40pt;
+  text-align: center;
+}
+#player2  {
+  border:3px solid #e49acd;
+  background-color: #f1cbe5;
+  border-radius: 25px;
+  margin-top: 100px;
+}
+
+#player1 {
+  border:3px solid #e49acd;
+  background-color: #f1cbe5;
+  border-radius: 25px;
+  margin-top: 100px;
+}
+.left {
+  padding-left: 50px;
+  text-align: center;
+}
+.right  {
+  padding-left:10px;
+  /*padding-top: 30px;*/
+  text-align: center;
+}
+.btn  {
+  color: #f1cbe5;
+  background-color:#e49acd;
+}
+.btn:hover  {
+  color: #f1cbe5;
+  background-color:#e49acd;
+}

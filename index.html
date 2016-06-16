@@ -13,34 +13,43 @@
     <div class="container">
       <h1>Pig Dice</h1>
     </div>
-    <div class="container" id="player1">
-      <h2>Player: <span id="displayPlayer1Name"></span></h2>
-      <p>Click snout to roll dice</p><img id="rollDice" src="img/Pig_Nose.png" alt="image of a pig snout">
-      <p><a id="hold" class="btn btn-primary" role="button">hold</a></p>
-      <div id="dice">
-        <p>Roll: <img id="blankDice" src='img/blankDice.png'><span id="displayDice"><img id="side1" src='img/die_face_1.png'><img id="side2" src='img/die_face_2.png'><img id="side3" src='img/die_face_3.png'><img id="side4" src='img/die_face_4.png'><img id="side5" src='img/die_face_5.png'><img id="side6" src='img/die_face_6.png'></span></p>
-      </div>
-      <div>
-        <p>turn score: <span id="turnScore"></span></p>
-      </div>
-    </div>
-    <div class="container" id="player2">
-      <h2>Player:<span id="displayPlayer2Name"></span></h2>
-      <p>Click snout to roll dice</p><img id="rollDice2" src="img/Pig_Nose.png" alt="image of a pig snout">
-      <p><a id="hold2" class="btn btn-primary" role="button">hold</a></p>
-      <div id="dice2">
-        <p>Roll: <img id="2blankDice" src='img/blankDice.png'><span id="displayDice2"><img id="2side1" src='img/die_face_1.png'><img id="2side2" src='img/die_face_2.png'><img id="2side3" src='img/die_face_3.png'><img id="2side4" src='img/die_face_4.png'><img id="2side5" src='img/die_face_5.png'><img id="2side6" src='img/die_face_6.png'></span></p>
-      </div>
-      <div>
-        <p>turn score: <span id="turnScore2"></span></p>
+    <div class="container" id="player1" class="player1">
+      <div class="row">
+        <div class="col-md-6 left">
+          <h2>Player: <span class="displayPlayer1Name player 1"></span></h2>
+          <p>Click snout to roll dice<br><img class="player1" id="rollDice" src="img/Pig_Nose.png" alt="image of a pig snout"></p>
+          <p><a id="hold" class="btn btn-default player1" role="button">hold</a></p>
+        </div>
+        <div class="col-md-6 right">
+          <div id="dice">
+            <h2>Roll:<h2><p><img class="player1" id="blankDice" src='img/blankDice.png'><span class="player1" id="displayDice"><img class="player1" id="side1" src='img/die_face_1.png'><img class="player1" id="side2" src='img/die_face_2.png'><img class="player1" id="side3" src='img/die_face_3.png'><img class="player1" id="side4" src='img/die_face_4.png'><img class="player1" id="side5" src='img/die_face_5.png'><img class="player1" id="side6" src='img/die_face_6.png'></span></p>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="container">
+    <div class="container player2" id="player2">
+      <div class="row">
+        <div class="col-md-6 left">
+          <h2>Player:<span class="displayPlayer2Name player2"></span></h2>
+          <p>Click snout to roll dice</p><p><img class="player2" id="rollDice2" src="img/Pig_Nose.png" alt="image of a pig snout"></p>
+          <p><a id="hold2" class="btn btn-default player2" role="button">hold</a></p>
+        </div>
+        <div class="col-md-6 right">
+          <div id="dice2 player2">
+            <h2>Roll:</h2><p><img id="2blankDice" class="player 2"src='img/blankDice.png'><span id="displayDice2" class="player2"><img class"player2" id="2side1" src='img/die_face_1.png'><img class"player2" id="2side2" src='img/die_face_2.png'><img class"player2" id="2side3" src='img/die_face_3.png'><img class"player2" id="2side4" src='img/die_face_4.png'><img class"player2" id="2side5" src='img/die_face_5.png'><img class"player2" id="2side6" src='img/die_face_6.png'></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container footer">
       <div>
-        <p>player 1 total score: <span id="totalScore"></span></p>
+        <p>turn score: <span class="turnScore"></span></p>
       </div>
       <div>
-        <p>player 2 total score: <span id="totalScore2"></span></p>
+        <p><span class = "displayPlayer1Name"></span> total score: <span id="totalScore"></span></p>
+      </div>
+      <div>
+        <p><span class = "displayPlayer2Name"></span> total score: <span id="totalScore2"></span></p>
       </div>
     </div>
     <div class="modal fade" id="playersModal" role="dialog">
